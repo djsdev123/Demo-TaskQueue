@@ -1,0 +1,28 @@
+RabbitMQ:
+	https://computingforgeeks.com/how-to-install-latest-rabbitmq-server-on-ubuntu-18-04-lts/
+Redis:
+	https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-18-04
+
+Celery:	
+	https://pawelzny.com/python/celery/2017/08/14/celery-4-tasks-best-practices/
+	https://blog.miguelgrinberg.com/post/using-celery-with-flask
+
+defautl:
+	celery -A celery_task worker --loglevel=info
+
+with queues:
+	celery -A proj worker -l info -Q default,low_priority,high_priority
+
+Where is profit in this approach? Obviously in concurrency. -c parameter defines how many concurrent threads worker create:
+	(venv) $ celery -A proj worker -l info -Q default -c 2
+	(venv) $ celery -A proj worker -l info -Q low_priority -c 1
+	(venv) $ celery -A proj worker -l info -Q high_priority -c 4
+
+And with auto scaling workers:
+	(venv) $ celery -A proj worker -l info -Q default --autoscale 4,2
+	(venv) $ celery -A proj worker -l info -Q low_priority --autoscale 2,1
+	(venv) $ celery -A proj worker -l info -Q high_priority --autoscale 8,4
+
+
+connect to a remote redis-server with redis-cli:
+	redis-cli -h localhost -p 6379
