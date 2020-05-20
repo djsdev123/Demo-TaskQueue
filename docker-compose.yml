@@ -27,7 +27,7 @@ services:
     
     worker:
         build: ./queue_app
-        command: celery -A celery_task worker -l info -Q default,low_priority,high_priority
+        command: celery -A celery_worker worker -l info -Q default,low_priority,high_priority
         container_name: worker
         restart: always
         depends_on: 
