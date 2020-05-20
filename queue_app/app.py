@@ -1,5 +1,5 @@
 from flask import Flask, url_for, jsonify
-from celery_task import reverse
+from celery_worker.celery_task import reverse
 
 
 app = Flask(__name__)
