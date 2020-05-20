@@ -1,5 +1,5 @@
 # Web Task Queue
 
-#### Stack: Flask, Celry, RabbitMQ, docker, docker-compose
+#### Stack: Flask, Celery, RabbitMQ, docker, docker-compose
 
 ![Schemas](TaskQueue.png)
