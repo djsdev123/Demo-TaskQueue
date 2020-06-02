@@ -9,3 +9,12 @@ app = Celery(
         'celery_worker.celery_task'
     ]
 )
+
+# app = Celery(
+#     'taskq',
+#     broker='amqp://localhost',
+#     backend='redis://localhost',
+#     include=[
+#     	'celery_worker.celery_task'
+#     ]
+# )
