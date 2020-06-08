@@ -11,7 +11,7 @@ defautl:
 	celery -A celery_task worker --loglevel=info
 
 with queues:
-	celery -A proj worker -l info -Q default,low_priority,high_priority
+	celery -A proj worker -l info -f taskslogs.log -Q default,low_priority,high_priority
 
 Where is profit in this approach? Obviously in concurrency. -c parameter defines how many concurrent threads worker create:
 	(venv) $ celery -A proj worker -l info -Q default -c 2
