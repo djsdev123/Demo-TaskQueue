@@ -1,4 +1,4 @@
-# Web Task Queue
+# Web Task Queue (Demo)
 
 #### Stack: Flask, Celery, RabbitMQ, docker, docker-compose
 
