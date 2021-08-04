@@ -2,4 +2,4 @@
 
 #### Stack: Flask, Celery, RabbitMQ, Redis, docker, docker-compose
 
-![Schemas](TaskQueue.png)
+![Schemas](Diagram.png)
