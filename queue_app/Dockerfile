@@ -1,4 +1,4 @@
-FROM python:3.13.0a3
+FROM python:3.14.0a1
 
 RUN apt-get update && apt-get -y install redis-tools
 
